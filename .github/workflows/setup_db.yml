@@ -8,9 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install PostgreSQL client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
-      - name: Run setup
-        run: |
-          PGPASSWORD=syx201012120501 psql -h db.xaxcfztcaulzfzwpziho.supabase.co -p 5432 -U postgres -d postgres -c "SELECT 1" || echo "Connection test failed"
-          PGPASSWORD=syx201012120501 psql -h db.xaxcfztcaulzfzwpziho.supabase.co -p 5432 -U postgres -d postgres -f setup.sql
-        env:
-          PGPASSWORD: syx201012120501
+      - name: Test connection
+        run: PGPASSWORD=syx201012120501 psql -h db.xaxcfztcaulzfzwpziho.supabase.co -p 5432 -U postgres.xaxcfztcaulzfzwpziho -d postgres -c "SELECT 1"
+      - name: Run SQL
+        run: PGPASSWORD=syx201012120501 psql -h db.xaxcfztcaulzfzwpziho.supabase.co -p 5432 -U postgres.xaxcfztcaulzfzwpziho -d postgres -f setup.sql

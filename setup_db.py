@@ -7,7 +7,7 @@ def main():
         host='db.xaxcfztcaulzfzwpziho.supabase.co',
         port=5432,
         dbname='postgres',
-        user='postgres',
+        user='postgres.xaxcfztcaulzfzwpziho',
         password='syx201012120501',
         sslmode='require',
         connect_timeout=30
