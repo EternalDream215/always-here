@@ -5,8 +5,7 @@ def main():
     print('Connecting to Supabase Postgres...')
     conn = psycopg2.connect(
         host='db.xaxcfztcaulzfzwpziho.supabase.co',
-        port=5432, dbname='postgres',
-        user='postgres', password='syx201012120501',
+port=5432, dbname='postgres',\n        user='postgres', password='syx201012120501',
         sslmode='require', connect_timeout=30
     )
     conn.autocommit = True
